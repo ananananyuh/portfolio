@@ -1,0 +1,231 @@
+/* Force scrollbar to avoid layout shifts */
+html {
+  overflow-y: scroll;
+}
+
+/* Root Color Variables */
+:root {
+  --bg-color: #ffe6f0;
+  --text-color: #3d1c47;
+  --accent-color: #dab6fc;
+  --button-color: #ff8dc7;
+  --button-hover: #ff69b4;
+}
+
+/* Dark Mode Overrides */
+body.dark-theme {
+  --bg-color: #1a001a;
+  --text-color: #fdd7ff;
+  --accent-color: #c000ff;
+  --button-color: #ff1493;
+  --button-hover: #ff00ff;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s, color 0.4s;
+}
+
+#typed {
+  display: inline-block;
+  min-height: 1.5em;
+}
+
+/* Navigation */
+nav {
+  background-color: var(--accent-color);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--button-hover);
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem 3rem;
+}
+
+.highlight {
+  color: var(--button-color);
+  font-weight: 700;
+}
+
+/* Centering the About Section */
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh; /* 👈 changed from 90vh */
+  text-align: center;
+}
+
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.about-text {
+  max-width: 600px;
+  background-color: rgba(255, 240, 250, 0.4);
+  padding: 2rem;
+  border-radius: 12px;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+body.dark-theme .about-text {
+  background-color: rgba(80, 0, 80, 0.3);
+}
+
+/* Sections (except About) */
+section:not(#about) {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Project Cards */
+.project-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.project {
+  background-color: #fff0fa;
+  border: 2px solid var(--accent-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-theme .project {
+  background-color: #29002e;
+  border-color: var(--button-hover);
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project button {
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.project button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Skills List */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  background-color: var(--accent-color);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #fff;
+}
+
+body.dark-theme .skills-list li {
+  background-color: var(--button-color);
+  color: #1a001a;
+}
+
+#resume {
+  text-align: center;
+}
+
+.resume-btn {
+  display: inline-block;
+  background-color: var(--button-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.resume-btn:hover {
+  background-color: var(--button-hover);
+}
+
+
+/* Contact */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: var(--button-color);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--button-hover);
+}
