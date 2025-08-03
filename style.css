@@ -84,16 +84,15 @@ nav a:hover {
   font-weight: 700;
 }
 
-/* Centering the About Section */
+/* About Section – centered layout */
 #about {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 60vh; /* 👈 changed from 90vh */
+  min-height: 60vh;
   text-align: center;
 }
-
 
 .about-container {
   display: flex;
@@ -114,6 +113,53 @@ nav a:hover {
 
 body.dark-theme .about-text {
   background-color: rgba(80, 0, 80, 0.3);
+}
+
+/* Optional: Alternate About Section layout */
+.about-section {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #fceaff;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.iphone-frame {
+  width: 300px;
+  height: 600px;
+  margin: 0 auto;
+  border: 16px solid #000;
+  border-radius: 36px;
+  position: relative;
+  background: #111;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.iphone-screen {
+  background: #fff;
+  color: #333;
+  padding: 1.5rem;
+  border-radius: 20px;
+  overflow-y: auto;
+  height: 100%;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.iphone-frame::after {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: #222;
+  border-radius: 50%;
 }
 
 /* Sections (except About) */
@@ -168,6 +214,7 @@ body.dark-theme .project {
   background-color: var(--button-hover);
 }
 
+/* Skills */
 .skills-section {
   padding: 3rem 2rem;
   background: #fbeaff;
@@ -213,12 +260,12 @@ body.dark-theme .project {
   color: #444;
 }
 
-
 body.dark-theme .skills-list li {
   background-color: var(--button-color);
   color: #1a001a;
 }
 
+/* Resume */
 #resume {
   text-align: center;
 }
@@ -238,7 +285,6 @@ body.dark-theme .skills-list li {
 .resume-btn:hover {
   background-color: var(--button-hover);
 }
-
 
 /* Contact */
 .social-links {
