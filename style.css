@@ -84,94 +84,84 @@ nav a:hover {
   font-weight: 700;
 }
 
-/* About Section – centered layout */
-#about {
+/* Reset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f9e6ff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+nav {
+  background-color: #d7bfff;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  margin: 0 1.2rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #6f42c1;
+}
+
+/* About Section */
+#about {
+  min-height: 90vh;
+  display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 60vh;
-  text-align: center;
+  padding: 2rem;
 }
 
 .about-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
-
-.about-text {
+  background-color: white;
   max-width: 600px;
-  background-color: rgba(255, 240, 250, 0.4);
-  padding: 2rem;
-  border-radius: 12px;
-  line-height: 1.8;
-  font-size: 1.1rem;
-  color: var(--text-color);
-}
-
-body.dark-theme .about-text {
-  background-color: rgba(80, 0, 80, 0.3);
-}
-
-/* Optional: Alternate About Section layout */
-.about-section {
-  padding: 3rem 2rem;
-  text-align: center;
-  background: #fceaff;
-}
-
-.about-section h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.iphone-frame {
-  width: 300px;
-  height: 600px;
-  margin: 0 auto;
-  border: 16px solid #000;
-  border-radius: 36px;
-  position: relative;
-  background: #111;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-.iphone-screen {
-  background: #fff;
-  color: #333;
-  padding: 1.5rem;
-  border-radius: 20px;
-  overflow-y: auto;
-  height: 100%;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  width: 90%;
+  padding: 3rem;
+  border-radius: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
 
-.iphone-frame::after {
-  content: "";
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
-  background: #222;
-  border-radius: 50%;
+.about-container p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
 }
 
-/* Sections (except About) */
-section:not(#about) {
-  padding: 4rem 2rem;
-  max-width: 900px;
-  margin: auto;
+.about-container strong {
+  font-weight: 600;
+  color: #000;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 2rem;
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .about-container {
+    padding: 2rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    margin: 0.5rem;
+  }
 }
 
 /* Project Cards */
