@@ -1,9 +1,6 @@
-/* Force scrollbar to avoid layout shifts */
-html {
-  overflow-y: scroll;
-}
-
-/* Root Color Variables */
+/* ============================
+   🌸 Global Base Styles
+============================= */
 :root {
   --bg-color: #ffe6f0;
   --text-color: #3d1c47;
@@ -12,7 +9,6 @@ html {
   --button-hover: #ff69b4;
 }
 
-/* Dark Mode Overrides */
 body.dark-theme {
   --bg-color: #1a001a;
   --text-color: #fdd7ff;
@@ -21,23 +17,31 @@ body.dark-theme {
   --button-hover: #ff00ff;
 }
 
-/* Global Styles */
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
   background-color: var(--bg-color);
   color: var(--text-color);
+  line-height: 1.6;
   transition: background-color 0.4s, color 0.4s;
 }
 
-#typed {
-  display: inline-block;
-  min-height: 1.5em;
-}
-
-/* Navigation */
+/* ============================
+   🌟 Navigation Bar
+============================= */
 nav {
   background-color: var(--accent-color);
+  display: flex;
+  justify-content: center;
   padding: 1rem;
   position: sticky;
   top: 0;
@@ -47,9 +51,8 @@ nav {
 
 nav ul {
   display: flex;
-  justify-content: center;
-  list-style: none;
   gap: 2rem;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
@@ -58,7 +61,7 @@ nav a {
   text-decoration: none;
   color: var(--text-color);
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -73,7 +76,9 @@ nav a:hover {
   color: var(--text-color);
 }
 
-/* Hero */
+/* ============================
+   💫 Hero Section
+============================= */
 .hero {
   text-align: center;
   padding: 5rem 2rem 3rem;
@@ -84,43 +89,14 @@ nav a:hover {
   font-weight: 700;
 }
 
-/* Reset defaults */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+#typed {
+  display: inline-block;
+  min-height: 1.5em;
 }
 
-body {
-  background-color: #f9e6ff;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Navbar */
-nav {
-  background-color: #d7bfff;
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-nav a {
-  margin: 0 1.2rem;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: #6f42c1;
-}
-
-/* About Section */
+/* ============================
+   ✨ About Section
+============================= */
 #about {
   min-height: 90vh;
   display: flex;
@@ -149,26 +125,19 @@ nav a:hover {
   color: #000;
 }
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .about-container {
-    padding: 2rem;
-  }
-
-  nav {
-    flex-wrap: wrap;
-  }
-
-  nav a {
-    margin: 0.5rem;
-  }
+/* ============================
+   🧠 Projects Section
+============================= */
+#projects {
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
-/* Project Cards */
 .project-grid {
   display: grid;
-  gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .project {
@@ -179,14 +148,14 @@ nav a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-body.dark-theme .project {
-  background-color: #29002e;
-  border-color: var(--button-hover);
-}
-
 .project:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .project {
+  background-color: #29002e;
+  border-color: var(--button-hover);
 }
 
 .project button {
@@ -204,7 +173,9 @@ body.dark-theme .project {
   background-color: var(--button-hover);
 }
 
-/* Skills */
+/* ============================
+   ⚙️ Skills Section
+============================= */
 .skills-section {
   padding: 3rem 2rem;
   background: #fbeaff;
@@ -229,13 +200,13 @@ body.dark-theme .project {
   background: white;
   border-radius: 1rem;
   padding: 1.5rem;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
 .skill-card strong {
@@ -250,14 +221,12 @@ body.dark-theme .project {
   color: #444;
 }
 
-body.dark-theme .skills-list li {
-  background-color: var(--button-color);
-  color: #1a001a;
-}
-
-/* Resume */
+/* ============================
+   📄 Resume Section
+============================= */
 #resume {
   text-align: center;
+  padding: 3rem 2rem;
 }
 
 .resume-btn {
@@ -276,20 +245,45 @@ body.dark-theme .skills-list li {
   background-color: var(--button-hover);
 }
 
-/* Contact */
+/* ============================
+   📬 Contact Section
+============================= */
+#contact {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
 .social-links {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  margin-top: 1.5rem;
 }
 
 .social-links a {
   text-decoration: none;
   color: var(--button-color);
   font-weight: 600;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .social-links a:hover {
   color: var(--button-hover);
+}
+
+/* ============================
+   📱 Responsive Design
+============================= */
+@media screen and (max-width: 768px) {
+  .about-container {
+    padding: 2rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    margin: 0.5rem;
+  }
 }
